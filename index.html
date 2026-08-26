@@ -80,13 +80,13 @@
       border-bottom: 1px solid rgba(0, 255, 255, 0.15);
     }
 
-    /* NÚT - DÙNG FLEX ĐỂ CÂN ĐỐI, KHÔNG TÁCH ICON */
+    /* NÚT - DÙNG FLEX, KHÔNG TÁCH ICON */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.3rem; /* khoảng cách nhỏ giữa các phần tử nếu có, nhưng ở đây chỉ có text */
-      flex-wrap: wrap; /* cho phép xuống dòng */
+      gap: 0.2rem;
+      flex-wrap: wrap;
       background: transparent;
       color: #00ffff;
       font-weight: 700;
@@ -95,12 +95,12 @@
       border-radius: 60px;
       text-decoration: none;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       border: 2px solid #00ffff;
       box-shadow: 0 0 20px rgba(0, 255, 255, 0.15), inset 0 0 20px rgba(0, 255, 255, 0.05);
       transition: all 0.3s ease;
       margin-bottom: 34px;
-      /* Không dùng white-space: nowrap để flex wrap hoạt động */
+      word-break: keep-all; /* giữ các từ không bị tách rời */
     }
     .btn:hover {
       background: #00ffff;
@@ -109,14 +109,13 @@
       transform: translateY(-3px) scale(1.02);
     }
 
-    /* Trên màn hình nhỏ, giữ nguyên flex-wrap, chỉ điều chỉnh padding và cỡ chữ */
     @media (max-width: 550px) {
       .container { padding: 30px 18px; }
       .btn {
         font-size: 1rem;
-        padding: 14px 24px;
+        padding: 14px 20px;
         width: 100%;
-        /* flex-wrap đã được kế thừa, text sẽ tự xuống dòng đẹp */
+        letter-spacing: 1px;
       }
     }
 
@@ -175,22 +174,19 @@
 <body>
 <div class="container">
 
-  <!-- CHỮ PLAT·DEX 7 MÀU -->
   <div class="brand">
     PLAT<span class="dot">·</span>DEX
   </div>
 
-  <!-- SLOGAN -->
   <div class="slogan">
     NƠI CÁC SIÊU NHÂN ĐỂ RA
   </div>
 
-  <!-- NÚT – KHÔNG ICON TẢI, CHỮ CÂN ĐỐI, KHÔNG TÁCH KHIÊN -->
+  <!-- NÚT ĐÃ SỬA NỘI DUNG -->
   <a href="platdexx.mobileconfig" class="btn" download>
-    🛡️ Cài Cấu Hình Tại Đây 🛡️
+    🛡️Cài Cấu Hình Ngay🛡️
   </a>
 
-  <!-- MÔ TẢ & LƯU Ý -->
   <div class="grid">
     <div class="card">
       <div class="label"><span class="dot-badge"></span> Mô tả</div>
