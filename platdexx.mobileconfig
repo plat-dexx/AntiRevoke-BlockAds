@@ -124,7 +124,7 @@
 - Không hao pin, không ảnh hưởng hiệu suất</string>
 
     <key>PayloadDisplayName</key>
-    <string>Plat • Dex - Tổng Hợp</string>
+    <string>Plat • Dex</string>
 
     <key>PayloadIdentifier</key>
     <string>com.platdex.combo</string>
