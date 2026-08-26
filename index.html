@@ -1,307 +1,274 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PLAT·DEX · Hacker</title>
-    <style>
-        /* Reset & Base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #05080f; /* Nền đen tuyền */
-            font-family: 'Segoe UI', 'Helvetica Neue', system-ui, sans-serif;
-            padding: 20px;
-        }
-        .container {
-            max-width: 780px;
-            width: 100%;
-            background: rgba(0, 10, 20, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            border-radius: 48px;
-            padding: 48px 36px 40px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 60px rgba(0, 255, 255, 0.05);
-            text-align: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PLAT·DEX · Hacker</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #05080f;
+      font-family: 'Segoe UI', 'Helvetica Neue', system-ui, sans-serif;
+      padding: 20px;
+    }
+    .container {
+      max-width: 780px;
+      width: 100%;
+      background: rgba(0, 10, 20, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 255, 255, 0.2);
+      border-radius: 48px;
+      padding: 48px 36px 40px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 60px rgba(0, 255, 255, 0.05);
+      text-align: center;
+    }
 
-        /* ===== LOGO KHIÊN + HACKER MASK (PHONG CÁCH CYBERPUNK) ===== */
-        .shield-logo {
-            width: 130px;
-            height: 150px;
-            margin: 0 auto 18px;
-            display: block;
-            filter: drop-shadow(0 0 35px rgba(0, 255, 255, 0.4));
-            transition: filter 0.3s ease;
-        }
-        .shield-logo:hover {
-            filter: drop-shadow(0 0 55px rgba(0, 255, 255, 0.8));
-        }
+    /* LOGO */
+    .shield-logo {
+      width: 150px;
+      height: 170px;
+      margin: 0 auto 18px;
+      display: block;
+      filter: drop-shadow(0 0 40px rgba(0, 255, 255, 0.3));
+      transition: filter 0.4s;
+    }
+    .shield-logo:hover {
+      filter: drop-shadow(0 0 70px rgba(0, 255, 255, 0.7));
+    }
 
-        /* ===== CHỮ 7 MÀU CHẠY ===== */
-        .brand {
-            font-size: clamp(3.4rem, 13vw, 6rem);
-            font-weight: 900;
-            letter-spacing: 2px;
-            line-height: 1.1;
-            /* 7 MÀU CẦU VỒNG */
-            background: linear-gradient(90deg, 
-                #ff0000, #ff7f00, #ffff00, #00ff00, 
-                #0000ff, #4b0082, #8b00ff, 
-                #ff0000, #ff7f00, #ffff00, #00ff00, 
-                #0000ff, #4b0082, #8b00ff
-            );
-            background-size: 200% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: rainbowFlow 6s linear infinite;
-            text-shadow: 0 0 40px rgba(0, 255, 255, 0.1);
-        }
-        .brand .dot {
-            -webkit-text-fill-color: #00ffff;
-            color: #00ffff;
-            text-shadow: 0 0 20px #00ffff;
-        }
-        /* Animation chạy 7 màu */
-        @keyframes rainbowFlow {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
+    /* CHỮ 7 MÀU */
+    .brand {
+      font-size: clamp(3.4rem, 13vw, 6rem);
+      font-weight: 900;
+      letter-spacing: 2px;
+      line-height: 1.1;
+      background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: rainbowFlow 6s linear infinite;
+    }
+    .brand .dot {
+      -webkit-text-fill-color: #00ffff;
+      color: #00ffff;
+      text-shadow: 0 0 20px #00ffff;
+    }
+    @keyframes rainbowFlow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
 
-        /* ===== SLOGAN (cũng 7 màu nhưng chạy chậm hơn) ===== */
-        .slogan {
-            font-weight: 700;
-            font-size: clamp(1rem, 3.2vw, 1.7rem);
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            background: linear-gradient(90deg, 
-                #ff0000, #ff7f00, #ffff00, #00ff00, 
-                #0000ff, #4b0082, #8b00ff, 
-                #ff0000, #ff7f00, #ffff00, #00ff00, 
-                #0000ff, #4b0082, #8b00ff
-            );
-            background-size: 200% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: rainbowFlow 8s linear infinite;
-            margin-top: 2px;
-            margin-bottom: 32px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid rgba(0, 255, 255, 0.15);
-        }
+    /* SLOGAN 7 MÀU */
+    .slogan {
+      font-weight: 700;
+      font-size: clamp(1rem, 3.2vw, 1.7rem);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: rainbowFlow 8s linear infinite;
+      margin-top: 2px;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+    }
 
-        /* ===== NÚT TẢI (phong cách hacker) ===== */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: transparent;
-            color: #00ffff;
-            font-weight: 700;
-            font-size: 1.1rem;
-            padding: 16px 44px;
-            border-radius: 60px;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: 2px solid #00ffff;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.15), inset 0 0 20px rgba(0, 255, 255, 0.05);
-            transition: all 0.3s ease;
-            margin-bottom: 34px;
-            cursor: pointer;
-        }
-        .btn:hover {
-            background: #00ffff;
-            color: #05080f;
-            box-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
-            transform: translateY(-3px) scale(1.02);
-        }
-        .btn svg {
-            width: 24px;
-            height: 24px;
-            fill: currentColor;
-            transition: fill 0.3s;
-        }
-        .btn:hover svg {
-            fill: #05080f;
-        }
+    /* NÚT */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: transparent;
+      color: #00ffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 16px 44px;
+      border-radius: 60px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border: 2px solid #00ffff;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.15), inset 0 0 20px rgba(0, 255, 255, 0.05);
+      transition: all 0.3s ease;
+      margin-bottom: 34px;
+    }
+    .btn:hover {
+      background: #00ffff;
+      color: #05080f;
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
+      transform: translateY(-3px) scale(1.02);
+    }
+    .btn svg { width: 24px; height: 24px; fill: currentColor; }
 
-        /* ===== THẺ MÔ TẢ ===== */
-        .grid {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            text-align: left;
-        }
-        .card {
-            background: rgba(0, 10, 20, 0.6);
-            border: 1px solid rgba(0, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 20px 24px;
-            transition: all 0.3s;
-        }
-        .card:hover {
-            border-color: #00ffff;
-            box-shadow: 0 0 25px rgba(0, 255, 255, 0.05);
-        }
-        .card .label {
-            font-weight: 700;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #00ffff;
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .card .label .dot-badge {
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: #00ffff;
-            box-shadow: 0 0 15px #00ffff;
-        }
-        .card p {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        .card code {
-            display: inline-block;
-            background: rgba(0, 255, 255, 0.08);
-            border: 1px solid rgba(0, 255, 255, 0.15);
-            padding: 2px 12px;
-            border-radius: 6px;
-            font-size: 0.8rem;
-            color: #00ffff;
-            font-family: 'SF Mono', 'Menlo', monospace;
-        }
-        .footnote {
-            margin-top: 28px;
-            color: rgba(0, 255, 255, 0.15);
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-            font-weight: 300;
-        }
+    /* THẺ */
+    .grid { display: flex; flex-direction: column; gap: 18px; text-align: left; }
+    .card {
+      background: rgba(0, 10, 20, 0.6);
+      border: 1px solid rgba(0, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 20px 24px;
+      transition: all 0.3s;
+    }
+    .card:hover { border-color: #00ffff; box-shadow: 0 0 25px rgba(0, 255, 255, 0.05); }
+    .card .label {
+      font-weight: 700;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #00ffff;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card .label .dot-badge {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #00ffff;
+      box-shadow: 0 0 15px #00ffff;
+    }
+    .card p {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .card code {
+      display: inline-block;
+      background: rgba(0, 255, 255, 0.08);
+      border: 1px solid rgba(0, 255, 255, 0.15);
+      padding: 2px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: #00ffff;
+      font-family: 'SF Mono', 'Menlo', monospace;
+    }
+    .footnote {
+      margin-top: 28px;
+      color: rgba(0, 255, 255, 0.15);
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+    }
 
-        /* Responsive */
-        @media (max-width: 550px) {
-            .container { padding: 30px 18px; }
-            .shield-logo { width: 100px; height: 115px; }
-            .btn { width: 100%; justify-content: center; padding: 14px 20px; }
-        }
-    </style>
+    @media (max-width: 550px) {
+      .container { padding: 30px 18px; }
+      .shield-logo { width: 110px; height: 125px; }
+      .btn { width: 100%; justify-content: center; padding: 14px 20px; }
+    }
+  </style>
 </head>
 <body>
-
 <div class="container">
 
-    <!-- =================================================== -->
-    <!-- LOGO KHIÊN GÓC CẠNH + MẶT NẠ HACKER (NEON XANH)     -->
-    <!-- =================================================== -->
-    <svg class="shield-logo" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Khiên góc cạnh (hình đa giác 8 cạnh bo góc) -->
-        <path d="M60 8 L110 38 L110 90 L60 128 L10 90 L10 38 L60 8 Z"
-              fill="#0a0f1a" stroke="#00ffff" stroke-width="3.5" />
-        <!-- Đường viền glow bên trong -->
-        <path d="M60 16 L104 42 L104 86 L60 120 L16 86 L16 42 L60 16 Z"
-              fill="none" stroke="rgba(0,255,255,0.3)" stroke-width="1.5" />
+  <!-- =================================================== -->
+  <!-- LOGO KHIÊN GÓC CẠNH + CHÂN DUNG HACKER (VẼ TAY)    -->
+  <!-- =================================================== -->
+  <svg class="shield-logo" viewBox="0 0 150 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Khiên đa giác góc cạnh (10 cạnh) -->
+    <path d="M75 15 L140 50 L140 100 L75 155 L10 100 L10 50 L75 15 Z"
+          fill="#0a0f1a" stroke="#00ffff" stroke-width="4" />
+    <!-- Viền trong mờ -->
+    <path d="M75 25 L130 55 L130 95 L75 145 L20 95 L20 55 L75 25 Z"
+          fill="none" stroke="rgba(0,255,255,0.25)" stroke-width="2" />
 
-        <!-- MẶT NẠ HACKER (Guy Fawkes cách điệu) - Màu xanh neon -->
-        <!-- Mắt trái -->
-        <ellipse cx="46" cy="68" rx="10" ry="14" fill="#0a0f1a" stroke="#00ffff" stroke-width="2" />
-        <circle cx="46" cy="66" r="4" fill="#00ffff" filter="url(#glow)" />
-        <!-- Mắt phải -->
-        <ellipse cx="74" cy="68" rx="10" ry="14" fill="#0a0f1a" stroke="#00ffff" stroke-width="2" />
-        <circle cx="74" cy="66" r="4" fill="#00ffff" filter="url(#glow)" />
+    <!-- === CHÂN DUNG HACKER === -->
+    <!-- Mũ trùm đầu (hoodie) -->
+    <path d="M55 50 C55 30, 95 30, 95 50 L95 80 L55 80 L55 50Z"
+          fill="#0d1a2b" stroke="#00ffff" stroke-width="2.5" />
+    <!-- Phần hood kéo lên, che nửa trán -->
+    <path d="M50 45 L100 45 L100 55 L50 55Z"
+          fill="#0d1a2b" stroke="#00ffff" stroke-width="2" />
 
-        <!-- Mũi (hình tam giác góc cạnh) -->
-        <polygon points="60,76 68,88 52,88" fill="#0a0f1a" stroke="#00ffff" stroke-width="2" />
+    <!-- Mặt (hình bầu dục góc cạnh) -->
+    <ellipse cx="75" cy="80" rx="28" ry="32" fill="#1a2a3a" stroke="#00ffff" stroke-width="2" />
 
-        <!-- Ria mép (đường nét góc cạnh) -->
-        <path d="M40 94 L60 86 L80 94" stroke="#00ffff" stroke-width="2.5" fill="none" />
-        <path d="M30 96 L40 94 L45 98" stroke="#00ffff" stroke-width="2" fill="none" />
-        <path d="M90 96 L80 94 L75 98" stroke="#00ffff" stroke-width="2" fill="none" />
+    <!-- Mắt hacker (kính trượt tuyết) -->
+    <rect x="52" y="70" width="18" height="12" rx="4" fill="#05080f" stroke="#00ffff" stroke-width="2" />
+    <rect x="80" y="70" width="18" height="12" rx="4" fill="#05080f" stroke="#00ffff" stroke-width="2" />
+    <!-- Mắt sáng bên trong -->
+    <circle cx="61" cy="76" r="4" fill="#00ffff" filter="url(#glow)" />
+    <circle cx="89" cy="76" r="4" fill="#00ffff" filter="url(#glow)" />
 
-        <!-- Miệng lưới (chữ hacker) -->
-        <rect x="48" y="102" width="24" height="10" rx="2" fill="#0a0f1a" stroke="#00ffff" stroke-width="1.5" />
-        <line x1="52" y1="102" x2="52" y2="112" stroke="#00ffff" stroke-width="1" />
-        <line x1="60" y1="102" x2="60" y2="112" stroke="#00ffff" stroke-width="1" />
-        <line x1="68" y1="102" x2="68" y2="112" stroke="#00ffff" stroke-width="1" />
+    <!-- Mũi (góc cạnh) -->
+    <polygon points="75,82 82,92 68,92" fill="#0d1a2b" stroke="#00ffff" stroke-width="1.8" />
 
-        <!-- Trang trí góc cạnh trên khiên -->
-        <path d="M60 20 L68 30 L52 30 L60 20 Z" fill="#00ffff" opacity="0.4" />
-        
-        <!-- Định nghĩa glow filter -->
-        <defs>
-            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="3" result="blur" />
-                <feMerge>
-                    <feMergeNode in="blur" />
-                    <feMergeNode in="SourceGraphic" />
-                </feMerge>
-            </filter>
-        </defs>
-    </svg>
+    <!-- Miệng (nét lạnh lùng) -->
+    <path d="M62 102 L88 102" stroke="#00ffff" stroke-width="2.5" stroke-linecap="round" />
+    <!-- Râu (đường viền dưới cằm) -->
+    <path d="M60 112 L90 112" stroke="#00ffff" stroke-width="2" stroke-linecap="round" opacity="0.6" />
 
-    <!-- =================================================== -->
-    <!-- CHỮ PLAT·DEX 7 MÀU CHẠY                             -->
-    <!-- =================================================== -->
-    <div class="brand">
-        PLAT<span class="dot">·</span>DEX
+    <!-- Vết sẹo cyberpunk trên má phải -->
+    <path d="M96 82 L104 86 L96 90" stroke="#ff0040" stroke-width="2" fill="none" opacity="0.8" />
+
+    <!-- Phần cổ / áo hoodie -->
+    <rect x="60" y="125" width="30" height="15" rx="4" fill="#0d1a2b" stroke="#00ffff" stroke-width="1.5" />
+
+    <!-- Hiệu ứng glow (dành cho mắt) -->
+    <defs>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="3" result="blur" />
+        <feMerge>
+          <feMergeNode in="blur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- =================================================== -->
+  <!-- CHỮ PLAT·DEX 7 MÀU CHẠY                             -->
+  <!-- =================================================== -->
+  <div class="brand">
+    PLAT<span class="dot">·</span>DEX
+  </div>
+
+  <!-- =================================================== -->
+  <!-- SLOGAN (cũng 7 màu)                                 -->
+  <!-- =================================================== -->
+  <div class="slogan">
+    NƠI CÁC SIÊU NHÂN ĐỂ RA
+  </div>
+
+  <!-- =================================================== -->
+  <!-- NÚT TẢI                                             -->
+  <!-- =================================================== -->
+  <a href="platdexx.mobileconfig" class="btn" download>
+    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+    Tải profile Plat•Dex
+  </a>
+
+  <!-- =================================================== -->
+  <!-- MÔ TẢ & LƯU Ý                                       -->
+  <!-- =================================================== -->
+  <div class="grid">
+    <div class="card">
+      <div class="label"><span class="dot-badge"></span> Mô tả</div>
+      <p>
+        Profile tích hợp <strong>3 DNS chặn quảng cáo</strong> và <strong>chặn thu hồi chứng chỉ</strong>
+        bằng cách chuyển hướng OCSP/CRL về <code>127.0.0.1</code>.<br/><br/>
+        <strong>Hỗ trợ:</strong> iOS, iPadOS, macOS, tvOS · WiFi & 4G/5G · Không hao pin.
+      </p>
     </div>
-
-    <!-- =================================================== -->
-    <!-- SLOGAN (cũng 7 màu)                                 -->
-    <!-- =================================================== -->
-    <div class="slogan">
-        NƠI CÁC SIÊU NHÂN ĐỂ RA
+    <div class="card">
+      <div class="label"><span class="dot-badge"></span> Lưu ý</div>
+      <p>
+        🔹 Cài đặt: <strong>Cài đặt → Chung → VPN & Quản lý thiết bị</strong><br/>
+        🔹 Gỡ bỏ: <strong>Cài đặt → Chung → VPN & Quản lý thiết bị → Xóa profile</strong><br/>
+        🔹 Chỉ dùng trong môi trường <strong>lab/test</strong> hoặc nghiên cứu bảo mật.
+      </p>
     </div>
-
-    <!-- =================================================== -->
-    <!-- NÚT TẢI CONFIG (TRỎ ĐÚNG FILE platdexx.mobileconfig)-->
-    <!-- =================================================== -->
-    <a href="platdexx.mobileconfig" class="btn" download>
-        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-        Tải profile Plat•Dex
-    </a>
-
-    <!-- =================================================== -->
-    <!-- MÔ TẢ & LƯU Ý                                       -->
-    <!-- =================================================== -->
-    <div class="grid">
-        <div class="card">
-            <div class="label"><span class="dot-badge"></span> Mô tả</div>
-            <p>
-                Profile tích hợp <strong>3 DNS chặn quảng cáo</strong> (DNS Forge, AdGuard, Family)
-                và <strong>chặn thu hồi chứng chỉ</strong> bằng cách chuyển hướng OCSP/CRL về <code>127.0.0.1</code>.<br/><br/>
-                <strong>Hỗ trợ:</strong> iOS, iPadOS, macOS, tvOS · WiFi & 4G/5G · Không hao pin, không giảm hiệu suất.
-            </p>
-        </div>
-        <div class="card">
-            <div class="label"><span class="dot-badge"></span> Lưu ý</div>
-            <p>
-                🔹 Cài đặt: <strong>Cài đặt → Chung → VPN & Quản lý thiết bị</strong><br/>
-                🔹 Có thể gây lỗi kết nối một số dịch vụ Apple – nếu gặp, hãy gỡ bỏ<br/>
-                🔹 Gỡ bỏ: <strong>Cài đặt → Chung → VPN & Quản lý thiết bị → Xóa profile</strong><br/>
-                🔹 Chỉ dùng trong môi trường <strong>lab/test</strong> hoặc nghiên cứu bảo mật.
-            </p>
-        </div>
-    </div>
-    <p class="footnote">⚡ Hacker Style · Plat•Dex Security Lab</p>
+  </div>
+  <p class="footnote">⚡ Hacker Style · Plat•Dex Security</p>
 </div>
-
 </body>
 </html>
