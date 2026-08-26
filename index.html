@@ -28,26 +28,31 @@
       text-align: center;
     }
 
-    /* LOGO */
+    /* LOGO - KHIÊN GÓC CẠNH + HACKER MẶC HOODIE */
     .shield-logo {
-      width: 150px;
-      height: 170px;
+      width: 140px;
+      height: 160px;
       margin: 0 auto 18px;
       display: block;
-      filter: drop-shadow(0 0 40px rgba(0, 255, 255, 0.3));
+      filter: drop-shadow(0 0 35px rgba(0, 255, 255, 0.3));
       transition: filter 0.4s;
     }
     .shield-logo:hover {
       filter: drop-shadow(0 0 70px rgba(0, 255, 255, 0.7));
     }
 
-    /* CHỮ 7 MÀU */
+    /* CHỮ 7 MÀU CHẠY */
     .brand {
       font-size: clamp(3.4rem, 13vw, 6rem);
       font-weight: 900;
       letter-spacing: 2px;
       line-height: 1.1;
-      background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+      background: linear-gradient(90deg, 
+          #ff0000, #ff7f00, #ffff00, #00ff00, 
+          #0000ff, #4b0082, #8b00ff, 
+          #ff0000, #ff7f00, #ffff00, #00ff00, 
+          #0000ff, #4b0082, #8b00ff
+      );
       background-size: 200% 100%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -64,13 +69,18 @@
       100% { background-position: 200% 50%; }
     }
 
-    /* SLOGAN 7 MÀU */
+    /* SLOGAN 7 MÀU (chạy chậm hơn) */
     .slogan {
       font-weight: 700;
       font-size: clamp(1rem, 3.2vw, 1.7rem);
       letter-spacing: 5px;
       text-transform: uppercase;
-      background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+      background: linear-gradient(90deg, 
+          #ff0000, #ff7f00, #ffff00, #00ff00, 
+          #0000ff, #4b0082, #8b00ff, 
+          #ff0000, #ff7f00, #ffff00, #00ff00, 
+          #0000ff, #4b0082, #8b00ff
+      );
       background-size: 200% 100%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -82,7 +92,7 @@
       border-bottom: 1px solid rgba(0, 255, 255, 0.15);
     }
 
-    /* NÚT */
+    /* NÚT TẢI (Style Hacker) */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -109,7 +119,7 @@
     }
     .btn svg { width: 24px; height: 24px; fill: currentColor; }
 
-    /* THẺ */
+    /* THẺ MÔ TẢ / LƯU Ý */
     .grid { display: flex; flex-direction: column; gap: 18px; text-align: left; }
     .card {
       background: rgba(0, 10, 20, 0.6);
@@ -170,53 +180,64 @@
 <body>
 <div class="container">
 
-  <!-- =================================================== -->
-  <!-- LOGO KHIÊN GÓC CẠNH + CHÂN DUNG HACKER (VẼ TAY)    -->
-  <!-- =================================================== -->
-  <svg class="shield-logo" viewBox="0 0 150 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Khiên đa giác góc cạnh (10 cạnh) -->
-    <path d="M75 15 L140 50 L140 100 L75 155 L10 100 L10 50 L75 15 Z"
+  <!-- ======================================================= -->
+  <!-- LOGO: KHIÊN GÓC CẠNH + HACKER MẶC HOODIE (VẼ TAY)      -->
+  <!-- ======================================================= -->
+  <svg class="shield-logo" viewBox="0 0 140 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Khiên đa giác góc cạnh (bo góc nhẹ, 10 cạnh) -->
+    <path d="M70 15 L130 45 L130 95 L70 145 L10 95 L10 45 L70 15 Z"
           fill="#0a0f1a" stroke="#00ffff" stroke-width="4" />
-    <!-- Viền trong mờ -->
-    <path d="M75 25 L130 55 L130 95 L75 145 L20 95 L20 55 L75 25 Z"
+    <!-- Viền glow bên trong -->
+    <path d="M70 23 L122 49 L122 91 L70 137 L18 91 L18 49 L70 23 Z"
           fill="none" stroke="rgba(0,255,255,0.25)" stroke-width="2" />
 
-    <!-- === CHÂN DUNG HACKER === -->
-    <!-- Mũ trùm đầu (hoodie) -->
-    <path d="M55 50 C55 30, 95 30, 95 50 L95 80 L55 80 L55 50Z"
+    <!-- ====== CHÂN DUNG HACKER (HOODIE KÍN MẶT) ====== -->
+    <!-- Mũ trùm hoodie (phần đầu che kín) -->
+    <path d="M45 58 C45 35, 95 35, 95 58 L95 85 L45 85 Z"
           fill="#0d1a2b" stroke="#00ffff" stroke-width="2.5" />
-    <!-- Phần hood kéo lên, che nửa trán -->
-    <path d="M50 45 L100 45 L100 55 L50 55Z"
-          fill="#0d1a2b" stroke="#00ffff" stroke-width="2" />
+    <!-- Đường gấp nếp trên mũ -->
+    <path d="M55 45 L85 45" stroke="#00ffff" stroke-width="1.5" opacity="0.6" />
+    <path d="M50 52 L90 52" stroke="#00ffff" stroke-width="1.5" opacity="0.4" />
 
-    <!-- Mặt (hình bầu dục góc cạnh) -->
-    <ellipse cx="75" cy="80" rx="28" ry="32" fill="#1a2a3a" stroke="#00ffff" stroke-width="2" />
+    <!-- Khuôn mặt (hình oval góc cạnh) -->
+    <ellipse cx="70" cy="78" rx="24" ry="28" fill="#1a2a3a" stroke="#00ffff" stroke-width="2" />
+    
+    <!-- Mắt hacker (kính bảo hộ / ski mask) -->
+    <path d="M50 74 L62 74 L62 84 L50 84 Z" fill="#05080f" stroke="#00ffff" stroke-width="2" />
+    <path d="M78 74 L90 74 L90 84 L78 84 Z" fill="#05080f" stroke="#00ffff" stroke-width="2" />
+    <!-- Đồng tử sáng neon -->
+    <circle cx="56" cy="79" r="3.5" fill="#00ffff" filter="url(#glow)" />
+    <circle cx="84" cy="79" r="3.5" fill="#00ffff" filter="url(#glow)" />
+    
+    <!-- Mũi (hình tam giác góc cạnh) -->
+    <polygon points="70,86 76,94 64,94" fill="#0d1a2b" stroke="#00ffff" stroke-width="1.8" />
+    
+    <!-- Miệng (nét thẳng, lạnh lùng) -->
+    <path d="M60 102 L80 102" stroke="#00ffff" stroke-width="2.5" stroke-linecap="round" />
+    
+    <!-- Râu / cằm dưới -->
+    <path d="M58 112 L82 112" stroke="#00ffff" stroke-width="2" stroke-linecap="round" opacity="0.5" />
 
-    <!-- Mắt hacker (kính trượt tuyết) -->
-    <rect x="52" y="70" width="18" height="12" rx="4" fill="#05080f" stroke="#00ffff" stroke-width="2" />
-    <rect x="80" y="70" width="18" height="12" rx="4" fill="#05080f" stroke="#00ffff" stroke-width="2" />
-    <!-- Mắt sáng bên trong -->
-    <circle cx="61" cy="76" r="4" fill="#00ffff" filter="url(#glow)" />
-    <circle cx="89" cy="76" r="4" fill="#00ffff" filter="url(#glow)" />
+    <!-- Vết sẹo cyberpunk (má trái) -->
+    <path d="M36 82 L44 86 L36 90" stroke="#ff0040" stroke-width="2.5" fill="none" opacity="0.9" />
 
-    <!-- Mũi (góc cạnh) -->
-    <polygon points="75,82 82,92 68,92" fill="#0d1a2b" stroke="#00ffff" stroke-width="1.8" />
+    <!-- Áo hoodie (phần thân) -->
+    <path d="M48 115 L92 115 L98 140 L42 140 Z" fill="#0d1a2b" stroke="#00ffff" stroke-width="2" />
+    <!-- Dây áo hoodie -->
+    <line x1="62" y1="115" x2="62" y2="128" stroke="#00ffff" stroke-width="2" />
+    <line x1="78" y1="115" x2="78" y2="128" stroke="#00ffff" stroke-width="2" />
+    <!-- Nếp gấp áo -->
+    <path d="M50 125 L90 125" stroke="#00ffff" stroke-width="1.5" opacity="0.3" />
 
-    <!-- Miệng (nét lạnh lùng) -->
-    <path d="M62 102 L88 102" stroke="#00ffff" stroke-width="2.5" stroke-linecap="round" />
-    <!-- Râu (đường viền dưới cằm) -->
-    <path d="M60 112 L90 112" stroke="#00ffff" stroke-width="2" stroke-linecap="round" opacity="0.6" />
-
-    <!-- Vết sẹo cyberpunk trên má phải -->
-    <path d="M96 82 L104 86 L96 90" stroke="#ff0040" stroke-width="2" fill="none" opacity="0.8" />
-
-    <!-- Phần cổ / áo hoodie -->
-    <rect x="60" y="125" width="30" height="15" rx="4" fill="#0d1a2b" stroke="#00ffff" stroke-width="1.5" />
+    <!-- Bàn tay trái (giơ lên ký hiệu) -->
+    <path d="M42 120 L32 120 L32 105 L42 105" fill="#0d1a2b" stroke="#00ffff" stroke-width="2" />
+    <!-- Tay phải (đút túi) -->
+    <path d="M98 120 L108 120 L108 105 L98 105" fill="#0d1a2b" stroke="#00ffff" stroke-width="2" />
 
     <!-- Hiệu ứng glow (dành cho mắt) -->
     <defs>
       <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="3" result="blur" />
+        <feGaussianBlur stdDeviation="3.5" result="blur" />
         <feMerge>
           <feMergeNode in="blur" />
           <feMergeNode in="SourceGraphic" />
@@ -225,50 +246,51 @@
     </defs>
   </svg>
 
-  <!-- =================================================== -->
-  <!-- CHỮ PLAT·DEX 7 MÀU CHẠY                             -->
-  <!-- =================================================== -->
+  <!-- ======================================================= -->
+  <!-- CHỮ PLAT·DEX (7 MÀU CHẠY)                              -->
+  <!-- ======================================================= -->
   <div class="brand">
     PLAT<span class="dot">·</span>DEX
   </div>
 
-  <!-- =================================================== -->
-  <!-- SLOGAN (cũng 7 màu)                                 -->
-  <!-- =================================================== -->
+  <!-- ======================================================= -->
+  <!-- SLOGAN (cũng 7 màu)                                     -->
+  <!-- ======================================================= -->
   <div class="slogan">
     NƠI CÁC SIÊU NHÂN ĐỂ RA
   </div>
 
-  <!-- =================================================== -->
-  <!-- NÚT TẢI                                             -->
-  <!-- =================================================== -->
+  <!-- ======================================================= -->
+  <!-- NÚT TẢI PROFILE (TRỎ ĐÚNG FILE platdexx.mobileconfig)   -->
+  <!-- ======================================================= -->
   <a href="platdexx.mobileconfig" class="btn" download>
     <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
     Tải profile Plat•Dex
   </a>
 
-  <!-- =================================================== -->
-  <!-- MÔ TẢ & LƯU Ý                                       -->
-  <!-- =================================================== -->
+  <!-- ======================================================= -->
+  <!-- MÔ TẢ & LƯU Ý                                           -->
+  <!-- ======================================================= -->
   <div class="grid">
     <div class="card">
       <div class="label"><span class="dot-badge"></span> Mô tả</div>
       <p>
-        Profile tích hợp <strong>3 DNS chặn quảng cáo</strong> và <strong>chặn thu hồi chứng chỉ</strong>
-        bằng cách chuyển hướng OCSP/CRL về <code>127.0.0.1</code>.<br/><br/>
-        <strong>Hỗ trợ:</strong> iOS, iPadOS, macOS, tvOS · WiFi & 4G/5G · Không hao pin.
+        Profile tích hợp <strong>3 DNS chặn quảng cáo</strong> (DNS Forge, AdGuard, Family)
+        và <strong>chặn thu hồi chứng chỉ</strong> bằng cách chuyển hướng OCSP/CRL về <code>127.0.0.1</code>.<br/><br/>
+        <strong>Hỗ trợ:</strong> iOS, iPadOS, macOS, tvOS · WiFi & 4G/5G · Không hao pin, không giảm hiệu suất.
       </p>
     </div>
     <div class="card">
       <div class="label"><span class="dot-badge"></span> Lưu ý</div>
       <p>
         🔹 Cài đặt: <strong>Cài đặt → Chung → VPN & Quản lý thiết bị</strong><br/>
+        🔹 Có thể gây lỗi kết nối một số dịch vụ Apple – nếu gặp, hãy gỡ bỏ<br/>
         🔹 Gỡ bỏ: <strong>Cài đặt → Chung → VPN & Quản lý thiết bị → Xóa profile</strong><br/>
         🔹 Chỉ dùng trong môi trường <strong>lab/test</strong> hoặc nghiên cứu bảo mật.
       </p>
     </div>
   </div>
-  <p class="footnote">⚡ Hacker Style · Plat•Dex Security</p>
+  <p class="footnote">⚡ Hacker Style · Plat•Dex Security Lab</p>
 </div>
 </body>
 </html>
