@@ -4,7 +4,7 @@
 <dict>
     <key>PayloadContent</key>
     <array>
-        <!-- DNS Forge - Plat•Dex VIP 01 -->
+        <!-- DNS Forge - Plat•DexV01 -->
         <dict>
             <key>PayloadType</key>
             <string>com.apple.dnsSettings.managed</string>
@@ -15,7 +15,7 @@
             <key>PayloadUUID</key>
             <string>1702-VIP11</string>
             <key>PayloadDisplayName</key>
-            <string>Plat•Dex VIP 01</string>
+            <string>Plat•DexV01</string>
             <key>DNSSettings</key>
             <dict>
                 <key>DNSProtocol</key>
@@ -34,7 +34,7 @@
             </dict>
         </dict>
 
-        <!-- AdGuard DNS - Plat•Dex VIP 02 -->
+        <!-- AdGuard DNS - Plat•DexV02 -->
         <dict>
             <key>PayloadType</key>
             <string>com.apple.dnsSettings.managed</string>
@@ -45,7 +45,7 @@
             <key>PayloadUUID</key>
             <string>1702-VIP22</string>
             <key>PayloadDisplayName</key>
-            <string>Plat•Dex VIP 02</string>
+            <string>Plat•DexV02</string>
             <key>DNSSettings</key>
             <dict>
                 <key>DNSProtocol</key>
@@ -64,36 +64,6 @@
             </dict>
         </dict>
 
-        <!-- AdGuard Family - Plat•Dex VIP 03 -->
-        <dict>
-            <key>PayloadType</key>
-            <string>com.apple.dnsSettings.managed</string>
-            <key>PayloadVersion</key>
-            <integer>1</integer>
-            <key>PayloadIdentifier</key>
-            <string>com.platdex.dns.family</string>
-            <key>PayloadUUID</key>
-            <string>1702-VIP33</string>
-            <key>PayloadDisplayName</key>
-            <string>Plat•Dex VIP 03</string>
-            <key>DNSSettings</key>
-            <dict>
-                <key>DNSProtocol</key>
-                <string>HTTPS</string>
-                <key>ServerURL</key>
-                <string>https://dns-family.adguard.com/dns-query</string>
-                <key>ServerName</key>
-                <array>
-                    <string>dns-family.adguard.com</string>
-                </array>
-                <key>ServerAddresses</key>
-                <array>
-                    <string>94.140.14.15</string>
-                    <string>94.140.15.16</string>
-                </array>
-            </dict>
-        </dict>
-
         <!-- Chặn thu hồi chứng chỉ - Plat•Dex Revoke Block -->
         <dict>
             <key>PayloadType</key>
@@ -105,7 +75,7 @@
             <key>PayloadUUID</key>
             <string>550e8400-e29b-41d4-a716-446655440000</string>
             <key>PayloadDisplayName</key>
-            <string>Plat•Dex Revoke Block</string>
+            <string>Plat•Dex Anti-Revoke</string>
             <key>DNSSettings</key>
             <dict>
                 <key>ServerAddresses</key>
@@ -154,7 +124,7 @@
 - Không hao pin, không ảnh hưởng hiệu suất</string>
 
     <key>PayloadDisplayName</key>
-    <string>Plat • Dex - Tổng Hợp</string>
+    <string>AntiRevoke & Block Ads</string>
 
     <key>PayloadIdentifier</key>
     <string>com.platdex.combo</string>
