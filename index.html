@@ -80,15 +80,13 @@
       border-bottom: 1px solid rgba(0, 255, 255, 0.15);
     }
 
-    /* NÚT TẢI - ĐÃ SỬA TEXT */
+    /* NÚT - KHÔNG CÓ ICON, CHỮ CÂN ĐỐI */
     .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
+      display: inline-block;
       background: transparent;
       color: #00ffff;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       padding: 16px 44px;
       border-radius: 60px;
       text-decoration: none;
@@ -98,6 +96,7 @@
       box-shadow: 0 0 20px rgba(0, 255, 255, 0.15), inset 0 0 20px rgba(0, 255, 255, 0.05);
       transition: all 0.3s ease;
       margin-bottom: 34px;
+      white-space: nowrap; /* Giữ 1 dòng trên màn hình lớn */
     }
     .btn:hover {
       background: #00ffff;
@@ -105,7 +104,18 @@
       box-shadow: 0 0 40px rgba(0, 255, 255, 0.5);
       transform: translateY(-3px) scale(1.02);
     }
-    .btn svg { width: 24px; height: 24px; fill: currentColor; }
+
+    /* Responsive: cho phép xuống dòng khi màn hình nhỏ */
+    @media (max-width: 550px) {
+      .container { padding: 30px 18px; }
+      .btn {
+        white-space: normal; /* Cho phép xuống dòng */
+        font-size: 1rem;
+        padding: 14px 20px;
+        width: 100%;
+        text-align: center;
+      }
+    }
 
     /* THẺ MÔ TẢ / LƯU Ý */
     .grid { display: flex; flex-direction: column; gap: 18px; text-align: left; }
@@ -157,11 +167,6 @@
       font-size: 0.7rem;
       letter-spacing: 1px;
     }
-
-    @media (max-width: 550px) {
-      .container { padding: 30px 18px; }
-      .btn { width: 100%; justify-content: center; padding: 14px 20px; }
-    }
   </style>
 </head>
 <body>
@@ -177,11 +182,8 @@
     NƠI CÁC SIÊU NHÂN ĐỂ RA
   </div>
 
-  <!-- =================================================== -->
-  <!-- NÚT TẢI - ĐÃ SỬA THEO YÊU CẦU                       -->
-  <!-- =================================================== -->
+  <!-- NÚT KHÔNG CÓ ICON, CHỮ CÂN ĐỐI -->
   <a href="platdexx.mobileconfig" class="btn" download>
-    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
     🛡️ Cài Cấu Hình Tại Đây 🛡️
   </a>
 
