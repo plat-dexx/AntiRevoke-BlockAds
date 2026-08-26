@@ -99,7 +99,7 @@
       border: 2px solid #00ffff;
       box-shadow: 0 0 20px rgba(0, 255, 255, 0.15), inset 0 0 20px rgba(0, 255, 255, 0.05);
       transition: all 0.3s ease;
-      margin-bottom: 16px; /* Giảm margin để nút Telegram sát hơn */
+      margin-bottom: 16px;
       word-break: keep-all;
     }
     .btn:hover {
@@ -109,7 +109,7 @@
       transform: translateY(-3px) scale(1.02);
     }
 
-    /* NÚT TELEGRAM (thêm mới) */
+    /* NÚT TELEGRAM */
     .btn-telegram {
       display: inline-flex;
       align-items: center;
@@ -198,30 +198,39 @@
       padding: 0;
       margin: 0;
     }
+    /* ĐỔI MÀU CHỮ CÁC MỤC SANG ĐỎ NEON */
     .card ul li {
-      color: rgba(255, 255, 255, 0.8);
+      color: #ff1744;  /* đỏ neon */
       font-size: 0.95rem;
       line-height: 1.8;
       padding-left: 8px;
       position: relative;
+      font-weight: 500;
+      text-shadow: 0 0 12px rgba(255, 23, 68, 0.3);
     }
     .card ul li::before {
       content: "•";
-      color: #00ffff;
+      color: #00ffff;  /* giữ dấu chấm xanh neon để nổi bật */
       font-weight: 700;
       margin-right: 8px;
       display: inline-block;
+      text-shadow: 0 0 10px #00ffff;
     }
     .card ul li .highlight {
-      color: #00ffff;
-      font-weight: 600;
+      color: #ff1744;  /* đỏ neon */
+      font-weight: 700;
+      text-shadow: 0 0 12px rgba(255, 23, 68, 0.4);
     }
 
+    /* FOOTER – MÀU TRẮNG NỔI */
     .footnote {
       margin-top: 28px;
-      color: rgba(0, 255, 255, 0.15);
-      font-size: 0.7rem;
+      color: #ffffff;   /* trắng tinh */
+      font-size: 0.85rem;
       letter-spacing: 1px;
+      font-weight: 500;
+      opacity: 1;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
     }
   </style>
 </head>
@@ -243,7 +252,7 @@
     🛡️Cài Cấu Hình Ngay🛡️
   </a>
 
-  <!-- ===== NÚT TELEGRAM (THÊM MỚI) ===== -->
+  <!-- NÚT TELEGRAM -->
   <a href="https://t.me/plat_dex" target="_blank" class="btn-telegram">
     <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
     📱 Liên Hệ Admin
@@ -274,7 +283,7 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- FOOTER – MÀU TRẮNG NỔI -->
   <p class="footnote">Thông Tin Chủ Sở Hữu : Plat•Dex</p>
 
 </div>
