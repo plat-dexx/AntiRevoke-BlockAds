@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Plat • Dex - Tổng Hợp</title>
+    <title>PLAT·DEX</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -27,32 +27,52 @@
             box-shadow: 0 30px 60px rgba(0,0,0,0.7);
             text-align: center;
         }
-        .badge {
-            display: inline-block;
-            background: #f5c518;
-            color: #0b1a2e;
-            font-weight: 700;
-            font-size: 0.7rem;
+        /* Logo chính với icon */
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 4px;
+        }
+        .logo-icon {
+            width: 56px;
+            height: 56px;
+            fill: #f5c518;
+            filter: drop-shadow(0 0 20px rgba(245,197,24,0.4));
+            flex-shrink: 0;
+        }
+        .logo-text {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-weight: 900;
+            font-size: clamp(3rem, 12vw, 5.2rem);
             letter-spacing: 2px;
-            padding: 4px 16px;
-            border-radius: 40px;
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(255,215,0,0.25);
+            line-height: 1.1;
+        }
+        .logo-text span {
+            color: #f5c518;
+            text-shadow: 0 0 40px rgba(245,197,24,0.5);
+        }
+        .logo-text .dot {
+            color: #f5c518;
+            margin: 0 2px;
+        }
+        /* Slogan */
+        .slogan {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-weight: 600;
+            font-size: clamp(1rem, 3vw, 1.6rem);
+            letter-spacing: 6px;
             text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-        h1 {
-            font-size: 2.6rem;
-            font-weight: 800;
-            color: #fff;
-            letter-spacing: -0.5px;
-            margin-bottom: 8px;
-        }
-        h1 span { color: #f5c518; }
-        h1 .dot { color: #f5c518; margin: 0 2px; }
-        .sub {
-            color: rgba(255,255,255,0.5);
-            font-size: 0.95rem;
-            margin-bottom: 32px;
-            border-bottom: 1px dashed rgba(255,215,0,0.15);
+            color: rgba(255,255,255,0.7);
+            background: linear-gradient(90deg, #f5c518, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 36px;
+            border-bottom: 1px dashed rgba(255,215,0,0.2);
             padding-bottom: 20px;
         }
         .btn {
@@ -134,23 +154,38 @@
         }
         @media (max-width: 550px) {
             .container { padding: 30px 18px; }
-            h1 { font-size: 1.8rem; }
+            .logo-text { font-size: 2.6rem; }
+            .logo-icon { width: 40px; height: 40px; }
             .btn { width: 100%; justify-content: center; padding: 14px 20px; }
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <div class="badge">⚡ Plat • Dex</div>
-    <h1>Plat<span class="dot">•</span>Dex <span>Tổng Hợp</span></h1>
-    <p class="sub">Chặn quảng cáo + Chặn thu hồi chứng chỉ · Ổn định, không hao pin</p>
 
-    <!-- ĐÃ SỬA: href đúng tên file platdexx.mobileconfig -->
+    <!-- LOGO + ICON như ảnh -->
+    <div class="logo-wrapper">
+        <!-- Icon ngôi sao 5 cánh -->
+        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+        <div class="logo-text">
+            PLAT<span class="dot">·</span>DEX
+        </div>
+    </div>
+
+    <!-- Slogan -->
+    <div class="slogan">
+        NƠI CÁC SIÊU NHÂN ĐỂ RA
+    </div>
+
+    <!-- NÚT TẢI (giữ nguyên tên file platdexx.mobileconfig) -->
     <a href="platdexx.mobileconfig" class="btn" download>
         <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
         Tải profile Plat•Dex
     </a>
 
+    <!-- Các thẻ mô tả và lưu ý (giữ nguyên) -->
     <div class="grid">
         <div class="card">
             <div class="label"><span class="dot"></span> Mô tả</div>
