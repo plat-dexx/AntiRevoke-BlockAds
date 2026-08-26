@@ -3,272 +3,176 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PLAT·DEX - Nơi các siêu nhân để ra</title>
-    <!-- Font hiện đại, cảm giác công nghệ -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <title>Plat • Dex - Tổng Hợp</title>
     <style>
-        /* Reset & Base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             background: radial-gradient(circle at 20% 30%, #0b1a2e, #03070f);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             padding: 20px;
         }
-
         .container {
-            max-width: 780px;
+            max-width: 720px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 215, 0, 0.15);
-            border-radius: 48px;
-            padding: 50px 40px 45px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 215, 0, 0.05) inset;
-            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 40px;
+            padding: 48px 36px 40px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.7);
             text-align: center;
         }
-
-        /* Logo & Slogan */
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: clamp(3.2rem, 12vw, 5.6rem);
-            letter-spacing: 4px;
-            color: #ffffff;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-            line-height: 1.1;
+        .badge {
+            display: inline-block;
+            background: #f5c518;
+            color: #0b1a2e;
+            font-weight: 700;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            padding: 4px 16px;
+            border-radius: 40px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
             margin-bottom: 8px;
         }
-
-        .logo span {
-            color: #f5c518;
-            text-shadow: 0 0 40px rgba(245, 197, 24, 0.5);
+        h1 span { color: #f5c518; }
+        h1 .dot { color: #f5c518; margin: 0 2px; }
+        .sub {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.95rem;
+            margin-bottom: 32px;
+            border-bottom: 1px dashed rgba(255,215,0,0.15);
+            padding-bottom: 20px;
         }
-
-        .logo .dot {
-            color: #f5c518;
-            margin: 0 2px;
-        }
-
-        .slogan {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.7);
-            background: linear-gradient(90deg, #f5c518, #ff8c00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 40px;
-            border-bottom: 1px dashed rgba(255, 215, 0, 0.2);
-            padding-bottom: 18px;
-        }
-
-        /* Nút tải chính */
-        .download-btn-wrapper {
-            margin: 28px 0 40px;
-        }
-
-        .download-btn {
+        .btn {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 14px;
-            background: linear-gradient(145deg, #f5c518, #e6a800);
+            gap: 12px;
+            background: linear-gradient(145deg, #f5c518, #d4a800);
             color: #0b1a2e;
-            font-family: 'Inter', sans-serif;
             font-weight: 700;
-            font-size: 1.25rem;
-            padding: 18px 44px;
-            border: none;
+            font-size: 1.1rem;
+            padding: 16px 44px;
             border-radius: 60px;
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: 0 10px 30px -5px rgba(245, 197, 24, 0.4), 0 0 0 2px rgba(255, 255, 255, 0.1) inset;
-            transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
+            letter-spacing: 1.5px;
+            box-shadow: 0 10px 30px -5px rgba(245,197,24,0.35);
+            transition: all 0.25s ease;
+            margin-bottom: 36px;
         }
-
-        .download-btn::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(145deg, #ffe066, #f5c518);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 18px 40px -5px rgba(245,197,24,0.55);
         }
-
-        .download-btn:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 18px 40px -5px rgba(245, 197, 24, 0.7);
-        }
-
-        .download-btn:hover::before {
-            opacity: 1;
-        }
-
-        .download-btn span,
-        .download-btn svg {
-            position: relative;
-            z-index: 2;
-        }
-
-        .download-btn svg {
-            width: 26px;
-            height: 26px;
-            fill: #0b1a2e;
-            transition: transform 0.2s ease;
-        }
-
-        .download-btn:hover svg {
-            transform: translateY(2px);
-        }
-
-        /* Khung mô tả & lưu ý */
-        .info-grid {
+        .btn svg { width: 24px; height: 24px; fill: #0b1a2e; }
+        .grid {
             display: flex;
             flex-direction: column;
-            gap: 24px;
-            margin-top: 10px;
+            gap: 18px;
             text-align: left;
         }
-
-        .info-card {
-            background: rgba(0, 0, 0, 0.45);
-            border: 1px solid rgba(255, 215, 0, 0.15);
-            border-radius: 24px;
-            padding: 22px 28px;
-            backdrop-filter: blur(4px);
-            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        .card {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,215,0,0.1);
+            border-radius: 20px;
+            padding: 20px 24px;
+            transition: border-color 0.25s;
         }
-
-        .info-card:hover {
-            border-color: rgba(245, 197, 24, 0.4);
-            box-shadow: 0 8px 25px -10px rgba(245, 197, 24, 0.15);
-        }
-
-        .info-card .label {
+        .card:hover { border-color: rgba(245,197,24,0.35); }
+        .card .label {
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2.5px;
             color: #f5c518;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
-        .info-card .label .badge {
+        .card .label .dot {
             display: inline-block;
-            width: 6px;
-            height: 6px;
+            width: 6px; height: 6px;
             border-radius: 50%;
             background: #f5c518;
             box-shadow: 0 0 12px #f5c518;
         }
-
-        .info-card .content {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1rem;
+        .card p {
+            color: rgba(255,255,255,0.75);
+            font-size: 0.95rem;
             line-height: 1.7;
-            font-weight: 400;
         }
-
-        .info-card .content .placeholder {
-            color: rgba(255, 255, 255, 0.35);
-            font-style: italic;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-            border-left: 3px solid rgba(255, 215, 0, 0.2);
-            padding-left: 16px;
+        .card code {
             display: block;
+            background: rgba(0,0,0,0.5);
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            color: #f5c518;
+            margin-top: 8px;
+            overflow-x: auto;
+            white-space: nowrap;
+            font-family: 'SF Mono', 'Menlo', monospace;
         }
-
-        /* Responsive */
+        .footnote {
+            margin-top: 28px;
+            color: rgba(255,255,255,0.25);
+            font-size: 0.7rem;
+            letter-spacing: 0.5px;
+        }
         @media (max-width: 550px) {
-            .container {
-                padding: 30px 20px 30px;
-                border-radius: 32px;
-            }
-            .download-btn {
-                width: 100%;
-                padding: 16px 20px;
-                font-size: 1rem;
-            }
-            .info-card {
-                padding: 18px 18px;
-            }
+            .container { padding: 30px 18px; }
+            h1 { font-size: 1.8rem; }
+            .btn { width: 100%; justify-content: center; padding: 14px 20px; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+<div class="container">
+    <div class="badge">⚡ Plat • Dex</div>
+    <h1>Plat<span class="dot">•</span>Dex <span>Tổng Hợp</span></h1>
+    <p class="sub">Chặn quảng cáo + Chặn thu hồi chứng chỉ · Ổn định, không hao pin</p>
 
-        <!-- LOGO + SLOGAN (như ảnh) -->
-        <div class="logo">
-            PLAT<span class="dot">·</span>DEX
+    <a href="platdex.mobileconfig" class="btn" download>
+        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        Tải profile Plat•Dex
+    </a>
+
+    <div class="grid">
+        <div class="card">
+            <div class="label"><span class="dot"></span> Mô tả</div>
+            <p>
+                Profile này tích hợp <strong>3 DNS chặn quảng cáo</strong> (DNS Forge, AdGuard, AdGuard Family) 
+                và <strong>1 lớp chặn thu hồi chứng chỉ</strong> bằng cách chuyển hướng các tên miền OCSP/CRL 
+                (<code>ocsp.apple.com</code>, <code>valid.apple.com</code>, <code>crl.apple.com</code>...)
+                về <strong>127.0.0.1</strong>, giúp giữ chứng chỉ hoạt động vĩnh viễn.<br/><br/>
+                <strong>Hỗ trợ:</strong> iOS, iPadOS, macOS, tvOS · WiFi & 4G/5G · Không hao pin, không ảnh hưởng hiệu suất.
+            </p>
         </div>
-        <div class="slogan">
-            NƠI CÁC SIÊU NHÂN ĐỂ RA
-        </div>
-
-        <!-- NÚT TẢI MOBILECONFIG -->
-        <div class="download-btn-wrapper">
-            <a href="platdexx.mobileconfig" class="download-btn" download>
-                <!-- Icon tải SVG đơn giản -->
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor">
-                    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-                </svg>
-                <span>Tải cấu hình MobileConfig</span>
-            </a>
-        </div>
-
-        <!-- PHẦN MÔ TẢ VÀ LƯU Ý (có khung) -->
-        <div class="info-grid">
-
-            <!-- Khung Mô tả -->
-            <div class="info-card">
-                <div class="label">
-                    <span class="badge"></span> Mô tả
-                </div>
-                <div class="content">
-                    <span class="placeholder">
-                        〢 Nội dung mô tả tạm thời để ... <br />
-                        〢 Chi tiết về cấu hình, chức năng, hoặc hướng dẫn cài đặt.
-                    </span>
-                </div>
-            </div>
-
-            <!-- Khung Lưu ý -->
-            <div class="info-card">
-                <div class="label">
-                    <span class="badge"></span> Lưu ý
-                </div>
-                <div class="content">
-                    <span class="placeholder">
-                        〢 Nội dung lưu ý tạm thời để ... <br />
-                        〢 Các cảnh báo quan trọng, điều kiện áp dụng hoặc yêu cầu hệ thống.
-                    </span>
-                </div>
-            </div>
-
+        <div class="card">
+            <div class="label"><span class="dot"></span> Lưu ý</div>
+            <p>
+                🔹 Cài đặt: <strong>Cài đặt → Chung → VPN & Quản lý thiết bị</strong><br/>
+                🔹 Profile có thể gây chậm hoặc lỗi kết nối với một số dịch vụ Apple (App Store, iCloud) – nếu gặp, hãy gỡ bỏ<br/>
+                🔹 Gỡ bỏ: <strong>Cài đặt → Chung → VPN & Quản lý thiết bị → Xóa profile</strong><br/>
+                🔹 Chỉ dùng trong môi trường <strong>lab/test</strong> hoặc cho mục đích giáo dục<br/>
+                🔹 Nếu dùng VPN, đảm bảo VPN không ghi đè DNS
+            </p>
         </div>
     </div>
+    <p class="footnote">Dành cho kiểm thử bảo mật và nghiên cứu · Plat•Dex</p>
+</div>
 </body>
 </html>
