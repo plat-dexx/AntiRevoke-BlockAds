@@ -80,7 +80,7 @@
       border-bottom: 1px solid rgba(0, 255, 255, 0.15);
     }
 
-    /* NÚT - DÙNG FLEX, KHÔNG TÁCH ICON */
+    /* NÚT */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -100,7 +100,7 @@
       box-shadow: 0 0 20px rgba(0, 255, 255, 0.15), inset 0 0 20px rgba(0, 255, 255, 0.05);
       transition: all 0.3s ease;
       margin-bottom: 34px;
-      word-break: keep-all; /* giữ các từ không bị tách rời */
+      word-break: keep-all;
     }
     .btn:hover {
       background: #00ffff;
@@ -119,8 +119,13 @@
       }
     }
 
-    /* THẺ MÔ TẢ / LƯU Ý */
-    .grid { display: flex; flex-direction: column; gap: 18px; text-align: left; }
+    /* ===== HAI KHUNG MỚI: MÔ TẢ & LƯU Ý ===== */
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      text-align: left;
+    }
     .card {
       background: rgba(0, 10, 20, 0.6);
       border: 1px solid rgba(0, 255, 255, 0.1);
@@ -128,14 +133,17 @@
       padding: 20px 24px;
       transition: all 0.3s;
     }
-    .card:hover { border-color: #00ffff; box-shadow: 0 0 25px rgba(0, 255, 255, 0.05); }
+    .card:hover {
+      border-color: #00ffff;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.05);
+    }
     .card .label {
       font-weight: 700;
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 3px;
       color: #00ffff;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -148,21 +156,30 @@
       background: #00ffff;
       box-shadow: 0 0 15px #00ffff;
     }
-    .card p {
-      color: rgba(255, 255, 255, 0.75);
+    .card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .card ul li {
+      color: rgba(255, 255, 255, 0.8);
       font-size: 0.95rem;
-      line-height: 1.7;
+      line-height: 1.8;
+      padding-left: 8px;
+      position: relative;
     }
-    .card code {
-      display: inline-block;
-      background: rgba(0, 255, 255, 0.08);
-      border: 1px solid rgba(0, 255, 255, 0.15);
-      padding: 2px 12px;
-      border-radius: 6px;
-      font-size: 0.8rem;
+    .card ul li::before {
+      content: "•";
       color: #00ffff;
-      font-family: 'SF Mono', 'Menlo', monospace;
+      font-weight: 700;
+      margin-right: 8px;
+      display: inline-block;
     }
+    .card ul li .highlight {
+      color: #00ffff;
+      font-weight: 600;
+    }
+
     .footnote {
       margin-top: 28px;
       color: rgba(0, 255, 255, 0.15);
@@ -174,39 +191,49 @@
 <body>
 <div class="container">
 
+  <!-- PLAT·DEX -->
   <div class="brand">
     PLAT<span class="dot">·</span>DEX
   </div>
 
+  <!-- SLOGAN -->
   <div class="slogan">
     NƠI CÁC SIÊU NHÂN ĐỂ RA
   </div>
 
-  <!-- NÚT ĐÃ SỬA NỘI DUNG -->
+  <!-- NÚT TẢI -->
   <a href="platdexx.mobileconfig" class="btn" download>
     🛡️Cài Cấu Hình Ngay🛡️
   </a>
 
+  <!-- ===== HAI KHUNG: MÔ TẢ & LƯU Ý ===== -->
   <div class="grid">
+    <!-- Mô tả -->
     <div class="card">
       <div class="label"><span class="dot-badge"></span> Mô tả</div>
-      <p>
-        Profile tích hợp <strong>3 DNS chặn quảng cáo</strong> (DNS Forge, AdGuard, Family)
-        và <strong>chặn thu hồi chứng chỉ</strong> bằng cách chuyển hướng OCSP/CRL về <code>127.0.0.1</code>.<br/><br/>
-        <strong>Hỗ trợ:</strong> iOS, iPadOS, macOS, tvOS · WiFi & 4G/5G · Không hao pin, không giảm hiệu suất.
-      </p>
+      <ul>
+        <li><span class="highlight">Tích Hợp 2 In 1</span></li>
+        <li><span class="highlight">Chặn Quảng Cáo</span></li>
+        <li><span class="highlight">Chặn Thu Hồi Chứng Chỉ Apple Dev</span></li>
+        <li><span class="highlight">Không Bị Giới Hạn Băng Thông</span></li>
+        <li><span class="highlight">Không Bị Lỗi Kết Nối</span></li>
+      </ul>
     </div>
+
+    <!-- Lưu ý -->
     <div class="card">
       <div class="label"><span class="dot-badge"></span> Lưu ý</div>
-      <p>
-        🔹 Cài đặt: <strong>Cài đặt → Chung → VPN & Quản lý thiết bị</strong><br/>
-        🔹 Có thể gây lỗi kết nối một số dịch vụ Apple – nếu gặp, hãy gỡ bỏ<br/>
-        🔹 Gỡ bỏ: <strong>Cài đặt → Chung → VPN & Quản lý thiết bị → Xóa profile</strong><br/>
-        🔹 Chỉ dùng trong môi trường <strong>lab/test</strong> hoặc nghiên cứu bảo mật.
-      </p>
+      <ul>
+        <li><span class="highlight">Không Sử Dùng VPN</span></li>
+        <li><span class="highlight">Không Để Reset Máy, Sập Nguồn Máy</span></li>
+        <li><span class="highlight">Nếu Reset Hay Sập Nguồn Phải Gỡ DNS Cài Lại</span></li>
+      </ul>
     </div>
   </div>
-  <p class="footnote">⚡ Hacker Style · Plat•Dex Security Lab</p>
+
+  <!-- FOOTER -->
+  <p class="footnote">Thông Tin Chủ Sở Hữu : Plat•Dex</p>
+
 </div>
 </body>
 </html>
